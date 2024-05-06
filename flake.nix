@@ -22,8 +22,7 @@
           src = ./.;
           release = true;
           cargoBuildOptions = x: x ++ [ "-p" "rumqttd" ];          
-          # TODO test without libtool or pkg-config
-          nativeBuildInputs = [ pkgs.pkg-config pkgs.libtool ];
+          nativeBuildInputs = [ pkgs.pkg-config pkgs.openssl];
           buildInputs = [ pkgs.openssl ];
         };
 
