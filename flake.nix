@@ -14,10 +14,12 @@
 
         naersk' = pkgs.callPackage naersk {};
 
-      in rec {
+      in {
         # For `nix build` & `nix run`:
-        defaultPackage = naersk'.buildPackage {
+        defaultPackage = naersk'.buildPackage rec {
           pname = "rumqttd";
+          version = "0.19.0";
+          name = "${pname}";
           root = ./.;
           src = ./.;
           release = true;
